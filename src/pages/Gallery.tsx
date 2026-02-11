@@ -97,7 +97,7 @@ const Gallery = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="cursor-pointer overflow-hidden rounded-lg group"
+                className="relative cursor-pointer overflow-hidden rounded-lg group"
                 onClick={() => {
                   const selectedIndex = images.findIndex(
                     (image) => image.src === img.src && image.alt === img.alt
@@ -111,7 +111,7 @@ const Gallery = () => {
                   className="w-full h-48 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-navy/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3 sm:p-4">
-                  <p className="text-white font-body text-sm font-semibold">{img.category}</p>
+                  <p className="text-primary-foreground font-body text-sm font-semibold">{img.category}</p>
                 </div>
               </motion.div>
             ))}

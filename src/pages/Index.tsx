@@ -6,6 +6,7 @@ import { pageMetadata, generateLocalBusinessSchema } from "@/lib/seo";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import QuoteRequestForm from "@/components/QuoteRequestForm";
 import FAQ from "@/components/FAQ";
+import ServiceAreaMap from "@/components/ServiceAreaMap";
 import heroBg from "@/assets/hero-bg.jpg";
 import property1 from "@/assets/property-1.jpg";
 import property2 from "@/assets/property-2.jpg";
@@ -228,24 +229,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Service Area */}
-      <section className="py-10 sm:py-16 bg-cream">
-        <div className="container mx-auto px-3 sm:px-4 text-center">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
-            className="flex flex-col items-center gap-2 sm:gap-3"
-          >
-            <MapPin className="w-7 h-7 sm:w-8 sm:h-8 text-gold-dark" />
-            <h2 className="font-heading text-xl sm:text-2xl md:text-3xl text-navy px-2 sm:px-0">
-              Serving Pulaski, VA & Surrounding Communities
-            </h2>
-          </motion.div>
-        </div>
-      </section>
+      {/* Service Area Map */}
+      <ServiceAreaMap />
 
       {/* Testimonials */}
       <TestimonialsCarousel />
