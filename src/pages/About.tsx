@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle, Target, Heart } from "lucide-react";
+import { useSeo } from "@/hooks/use-seo";
+import { pageMetadata } from "@/lib/seo";
 import property1 from "@/assets/property-1.jpg";
 
 const fadeUp = {
@@ -17,6 +19,8 @@ const values = [
 ];
 
 const About = () => {
+  useSeo(pageMetadata.about);
+
   return (
     <main className="pt-20">
       <section className="bg-navy py-16 md:py-24">
