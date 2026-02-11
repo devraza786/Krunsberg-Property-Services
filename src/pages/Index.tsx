@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Phone, Facebook, Paintbrush, Hammer, TreePine, Droplets, Home, Wrench, ArrowRight, CheckCircle, MapPin } from "lucide-react";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import QuoteRequestForm from "@/components/QuoteRequestForm";
 import heroBg from "@/assets/hero-bg.jpg";
 import property1 from "@/assets/property-1.jpg";
 import property2 from "@/assets/property-2.jpg";
@@ -236,6 +238,12 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <TestimonialsCarousel />
+
+      {/* Quote Request */}
+      <QuoteRequestForm />
 
       {/* CTA Banner */}
       <section className="py-20 gradient-navy relative overflow-hidden">
