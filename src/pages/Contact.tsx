@@ -2,8 +2,11 @@ import { motion } from "framer-motion";
 import { Phone, MapPin, Facebook } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useSeo } from "@/hooks/use-seo";
+import { pageMetadata } from "@/lib/seo";
 
 const Contact = () => {
+  useSeo(pageMetadata.contact);
   const { toast } = useToast();
   const [form, setForm] = useState({
     name: "", phone: "", email: "", service: "", message: "",

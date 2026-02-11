@@ -7,6 +7,7 @@ import logo from "@/assets/logo.png";
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
+  { to: "/pricing", label: "Pricing" },
   { to: "/about", label: "About" },
   { to: "/gallery", label: "Gallery" },
   { to: "/contact", label: "Contact" },
@@ -17,8 +18,8 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-sm border-b border-gold/20">
-      <div className="container mx-auto px-4 flex items-center justify-between h-16 md:h-20">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-sm border-b border-gold/20 w-full">
+      <div className="container mx-auto px-3 sm:px-4 flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="Krunsberg Property Services" className="h-12 md:h-14 w-auto" />
         </Link>
