@@ -11,11 +11,11 @@ const fadeUp = {
 };
 
 const serviceAreas = [
-  { name: "Pulaski", coordinate: "37.3289, -80.7633" },
-  { name: "Dublin", coordinate: "37.2841, -80.6511" },
-  { name: "Radford", coordinate: "37.1317, -80.5754" },
-  { name: "Floyd County", coordinate: "37.0133, -80.4166" },
-  { name: "Giles County", coordinate: "37.3042, -80.5742" },
+  { name: "Pulaski", description: "Main Service Hub", coordinate: "37.3289, -80.7633" },
+  { name: "Dublin", description: "Extended Service Area", coordinate: "37.2841, -80.6511" },
+  { name: "Radford", description: "Extended Service Area", coordinate: "37.1317, -80.5754" },
+  { name: "Floyd County", description: "Service Coverage", coordinate: "37.0133, -80.4166" },
+  { name: "Giles County", description: "Service Coverage", coordinate: "37.3042, -80.5742" },
 ];
 
 const ServiceAreaMap = () => {
@@ -38,7 +38,7 @@ const ServiceAreaMap = () => {
             </h2>
           </div>
           <p className="font-body text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
-            We proudly serve Pulaski, VA and the surrounding communities. Our experienced team is ready to help with your property needs.
+            Serving Pulaski, VA and surrounding regions including Dublin, Radford, Floyd County, and Giles County. Our experienced team is ready to help with your property needs.
           </p>
         </motion.div>
 
@@ -51,40 +51,18 @@ const ServiceAreaMap = () => {
           custom={1}
           className="bg-white rounded-lg shadow-lg overflow-hidden mb-10 sm:mb-12"
         >
-          <div className="w-full h-96 sm:h-[500px] bg-gray-200 flex items-center justify-center">
-            <div className="text-center px-4">
-              <p className="font-body text-muted-foreground mb-2">Interactive Map</p>
-              <p className="font-body text-sm text-muted-foreground">
-                To enable the interactive Google Map, please:
-              </p>
-              <ol className="font-body text-xs sm:text-sm text-muted-foreground mt-2 space-y-1">
-                <li>1. Get a Google Maps API key from Google Cloud Console</li>
-                <li>2. Install: npm install @react-google-maps/api</li>
-                <li>3. Set VITE_GOOGLE_MAPS_API_KEY environment variable</li>
-                <li>4. Uncomment the GoogleMap component below</li>
-              </ol>
-            </div>
+          <div className="w-full h-96 sm:h-[500px]">
+            <iframe
+              title="Krunsberg Property Services - Service Area Map"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51962.489455088476!2d-80.84089453486327!3d37.318957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884d9a64c8c8c8cd%3A0x5f8c8c8c8c8c8c8c!2sPulaski%2C%20VA%2024301!5e0!3m2!1sen!2sus!4v1707000000000&z=9"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
-          {/* 
-            GoogleMap Component (Uncomment after installing @react-google-maps/api):
-            
-            <GoogleMap
-              mapContainerStyle={{ width: "100%", height: "500px" }}
-              center={{ lat: 37.3289, lng: -80.7633 }}
-              zoom={9}
-            >
-              {serviceAreas.map((area) => (
-                <Marker
-                  key={area.name}
-                  position={{
-                    lat: parseFloat(area.coordinate.split(",")[0]),
-                    lng: parseFloat(area.coordinate.split(",")[1]),
-                  }}
-                  title={area.name}
-                />
-              ))}
-            </GoogleMap>
-          */}
         </motion.div>
 
         {/* Service Areas Grid */}
@@ -97,12 +75,12 @@ const ServiceAreaMap = () => {
               viewport={{ once: true }}
               variants={fadeUp}
               custom={i + 2}
-              className="bg-white rounded-lg p-4 sm:p-6 shadow-md text-center hover:shadow-lg transition-shadow"
+              className="bg-gradient-to-br from-white to-cream rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg hover:from-gold/10 transition-all"
             >
               <MapPin className="w-8 h-8 sm:w-10 sm:h-10 text-gold mx-auto mb-2 sm:mb-3" />
               <h3 className="font-heading text-lg sm:text-xl text-navy">{area.name}</h3>
-              <p className="font-body text-xs sm:text-sm text-muted-foreground mt-2">
-                Service Area
+              <p className="font-body text-xs sm:text-sm text-gold-dark font-semibold mt-1 mb-2">
+                {area.description}
               </p>
             </motion.div>
           ))}
@@ -115,17 +93,20 @@ const ServiceAreaMap = () => {
           viewport={{ once: true }}
           variants={fadeUp}
           custom={7}
-          className="mt-10 sm:mt-12 text-center"
+          className="mt-10 sm:mt-12 text-center bg-gradient-to-r from-navy-light/30 to-gold/10 rounded-lg p-6 sm:p-8"
         >
-          <p className="font-body text-sm sm:text-base text-muted-foreground mb-4">
-            Don't see your area listed? Contact us - we may still be able to help!
+          <h3 className="font-heading text-xl sm:text-2xl text-navy mb-3">
+            Ready to Get Started?
+          </h3>
+          <p className="font-body text-sm sm:text-base text-muted-foreground mb-6">
+            Contact us today for a free consultation in your service area!
           </p>
           <a
             href="tel:3368173875"
-            className="inline-flex items-center gap-2 gradient-gold text-navy font-body font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-md hover:opacity-90 transition-opacity text-sm sm:text-base"
+            className="inline-flex items-center gap-2 gradient-gold text-navy font-body font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-md hover:opacity-90 transition-opacity text-sm sm:text-base min-h-[44px] sm:min-h-auto"
           >
             <MapPin className="w-4 h-4" />
-            Call for Availability
+            Call Now: 336-817-3875
           </a>
         </motion.div>
       </div>
